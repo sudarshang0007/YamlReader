@@ -1,0 +1,584 @@
+boms: 
+      - name: cloud-bom
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-dependencies
+        mappings:
+          - versionRange: "[1.2.3.RELEASE,1.3.0.RELEASE)"
+            version: Angel.SR6
+          - versionRange: "[1.3.0.RELEASE,1.4.0.RELEASE)"
+            version: Brixton.SR7
+          - versionRange: "[1.4.0.RELEASE,1.5.x.RELEASE)"
+            version: Camden.SR6
+          - versionRange: "[1.5.0.RELEASE,1.5.x.BUILD-SNAPSHOT)"
+            version: Dalston.RC1
+            repositories: spring-milestones
+          - versionRange: "1.5.x.BUILD-SNAPSHOT"
+            version: Dalston.BUILD-SNAPSHOT
+            repositories: spring-snapshots,spring-milestones
+      - name: cloud-dataflow-bom
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-dataflow-dependencies
+        bom: [cloud-task-bom,cloud-bom]
+        mappings:
+          - versionRange: "[1.3.2.RELEASE,1.4.0.RELEASE)"
+            version: 1.0.1.RELEASE
+          - versionRange: "[1.4.0.RELEASE,1.4.x.BUILD-SNAPSHOT)"
+            version: 1.1.4.RELEASE
+          - versionRange: "[1.4.x.BUILD-SNAPSHOT, 1.5.0.RC1)"
+            version: 1.1.5.BUILD-SNAPSHOT
+            repositories: spring-snapshots,spring-milestones
+          - versionRange: "[1.5.0.RC1, 2.0.0.M1)"
+            version: 1.2.0.BUILD-SNAPSHOT
+            repositories: spring-snapshots,spring-milestones
+      - name: cloud-services-bom
+        groupId: io.pivotal.spring.cloud
+        artifactId: spring-cloud-services-dependencies
+        bom: [cloud-bom]
+        mappings:
+          - versionRange: "[1.3.0.RELEASE,1.4.0.RELEASE)"
+            version: 1.2.1.RELEASE
+          - versionRange: "[1.4.0.RELEASE,1.5.x.RELEASE]"
+            version: 1.4.1.RELEASE
+          - versionRange: "[1.5.x.BUILD-SNAPSHOT, 2.0.0.M1)"
+            version: 1.4.2.BUILD-SNAPSHOT
+            repositories: spring-snapshots,spring-milestones
+      - name: cloud-task-bom
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-task-dependencies
+        mappings:
+          - versionRange: "[1.3.0.RELEASE, 1.4.0.RELEASE]"
+            version: 1.0.3.RELEASE
+          - versionRange: "[1.4.0.RELEASE, 1.5.0.RC1)"
+            version: 1.1.2.RELEASE
+          - versionRange: "1.5.0.RC1"
+            version: 1.2.0.M2
+            repositories: spring-milestones
+      - name: vaadin-bom
+        groupId: com.vaadin
+        artifactId: vaadin-bom
+        mappings:
+          - versionRange: "[1.3.0.RELEASE, 1.5.0.M1)"
+            version: 7.7.5
+          - versionRange: "1.5.0.M1"
+            version: 8.0.5
+      - name: stormpath-bom
+        groupId: com.stormpath.sdk
+        artifactId: stormpath-bom
+        mappings:
+          - versionRange: "*"
+            version: 1.5.2
+deps:     
+      # Spring Boot core Dependencies
+
+      - name: Security
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-security
+        id: security
+        description: Secure your application via spring-security
+
+      - name: AOP
+        id: aop
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-aop
+        description: Aspect-oriented programming including spring-aop and AspectJ
+      
+      - name: Atomikos (JTA)
+        id: jta-atomikos
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jta-atomikos
+        description: JTA distributed transactions via Atomikos
+        versionRange: 1.2.0.M1
+
+      - name: Bitronix (JTA)
+        id: jta-bitronix
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jta-bitronix
+        description: JTA distributed transactions via Bitronix
+        versionRange: 1.2.0.M1
+
+      - name: Narayana (JTA)
+        id: jta-narayana
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jta-narayana
+        description: JTA distributed transactions via Narayana
+        versionRange: 1.4.0.M2
+      
+      - name: Cache
+        id: cache
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-cache
+        description: Spring's Cache abstraction
+        versionRange: 1.3.0.M1
+
+      - name: DevTools
+        id: devtools
+        groupId: org.springframework.boot
+        artifactId: spring-boot-devtools
+        category: Core
+        scope: runtime
+        description: Spring Boot Development Tools
+        versionRange: 1.3.0.M1
+      
+      - name: Configuration Processor
+        id: configuration-processor
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-configuration-processor
+        scope: compileOnly
+        description: Generate metadata for your custom configuration keys
+        versionRange: 1.2.0.RELEASE
+
+      - name: Validation
+        id: validation
+        category: Core
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-validation
+        description: JSR-303 validation infrastructure (already included with web)
+        versionRange: 1.3.0.M1
+
+      - name: Retry
+        id: retry
+        category: Core
+        groupId: org.springframework.retry
+        artifactId: spring-retry
+        description: Provide declarative retry support via spring-retry
+        versionRange: 1.3.0.M2
+      
+      - name: Lombok
+        id: lombok
+        category: Core
+        groupId: org.projectlombok
+        artifactId: lombok
+        scope: compileOnly
+        description: Java annotation library which helps to reduce boilerplate code and code faster
+        mappings:
+          - versionRange: "[1.2.0.RELEASE,1.4.0.M1)"
+            version: 1.16.6
+      
+      - name: Session
+        id: session
+        category: Core
+        groupId: org.springframework.session
+        artifactId: spring-session
+        description: API and implementations for managing a user's session information
+        versionRange: 1.3.0.M2
+        
+        
+       # Web dependencies
+       
+      - name: REST Docs
+        id: restdocs
+        category: Web
+        description: Document RESTful services by combining hand-written and auto-generated documentation
+        groupId: org.springframework.restdocs
+        artifactId: spring-restdocs-mockmvc
+        mappings:
+           - versionRange: "[1.2.0.RELEASE,1.3.0.RC1)"
+             version: 1.0.1.RELEASE
+        scope: test
+          
+          
+      - name: Stormpath
+        id: stormpath
+        category: Web
+        description: Stormpath default starter including Spring MVC, Thymeleaf and Spring Security
+        groupId: com.stormpath.spring
+        artifactId: stormpath-default-spring-boot-starter
+        versionRange: "[1.5.0.RC1,2.0.0.M1)"
+        bom: [stormpath-bom]
+      
+      - name: Mobile
+        id: mobile
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-mobile
+        description: Simplify the development of mobile web applications with spring-mobile
+        
+      - name: Rest Repositories HAL Browser
+        id: data-rest-hal
+        category: Web
+        description: Browsing Spring Data REST repositories in your browser
+        groupId: org.springframework.data
+        artifactId: spring-data-rest-hal-browser
+        versionRange: 1.3.0.M1   
+        
+      - name: HATEOAS
+        id: hateoas
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-hateoas
+        description: HATEOAS-based RESTful services
+        versionRange: 1.2.2.RELEASE
+        
+      - name: Vaadin  # Vaadin
+        id: vaadin
+        category: Web
+        groupId: com.vaadin
+        artifactId: vaadin-spring-boot-starter
+        description: Vaadin java web application framework
+        bom: [vaadin-bom]
+        versionRange: 1.2.0.RELEASE
+        mappings:
+           - versionRange: "[1.2.0.RELEASE,1.4.0.RELEASE)"
+             version: 1.0.2
+           - versionRange: "[1.4.0.RELEASE,1.5.0.M1)"
+             version: 1.2.0
+             
+      - name: Ratpack # Ratpack
+        id: ratpack
+        category: Web
+        description: Spring Boot integration for the Ratpack framework
+        groupId: io.ratpack
+        artifactId: ratpack-spring-boot
+        mappings:
+          - versionRange: "*"
+            version: 1.1.1
+        versionRange: 1.2.0.RELEASE
+        
+      - name: Websocket
+        id: websocket
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-websocket
+        description: Websocket development with SockJS and STOMP
+        
+      - name: Web Services
+        id: web-services
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-web-services
+        description: Contract-first SOAP service development with Spring Web Services
+        versionRange: 1.4.0.M3
+              
+      - name: Web Services
+        id: web-services
+        category: Web
+        groupId: org.springframework.boot
+        description: Contract-first SOAP service development with Spring Web Services
+        artifactId: spring-boot-starter-ws
+        versionRange: "[1.1.0.RELEASE,1.4.0.M3)"
+        
+      - name: Jersey (JAX-RS)
+        id: jersey
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jersey
+        description: RESTful Web Services framework
+        versionRange: 1.2.0.RELEASE
+        
+      - name: Reactive Web   ##################     deprecated    ###############
+        id: webflux
+        category: Web
+        groupId:
+        artifactId: spring-boot-starter-webflux
+        versionRange: 2.0.0.BUILD-SNAPSHOT
+        description: Reactive web development with Netty and Spring WebFlux 
+        
+      - name: Web
+        id: web
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-web
+        description: Full-stack web development with Tomcat and Spring MVC 
+        
+      - name: Rest Repositories
+        id: data-rest
+        category: Web
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-rest
+        description: Exposing Spring Data repositories over REST via spring-data-rest-webmvc
+        
+        
+     
+        #  JUNIT Dependencies  #
+        #*********************************************************
+        
+      - name: JUnit
+        id: junit
+        category: Unit and Integration Test
+        description: Java Unit testing 
+        groupId: junit
+        artifactId: junit
+        mappings:
+           - versionRange: "*"
+             version: 4.12   
+      
+      - name: Test NG
+        id: testng
+        category: Unit and Integration Test
+        description: Testing framework
+        groupId: org.testng
+        artifactId: testng
+        mappings:
+           - versionRange: "*"
+             version: 6.11
+      
+      - name: Mockito
+        id: mockito
+        category: Unit and Integration Test
+        description: Mocking framework
+        groupId: org.mockito
+        artifactId: mockito-all
+        mappings:
+           - versionRange: "*"
+             version: 1.9.5    
+        
+        
+       #
+       #  Consumer Driven Contract
+       #
+       
+      -  name: Pact
+         id: pact
+         category: Consumer-Driven Contracts
+         description: Frameworks provide support for Consumer Driven Contracts testing 
+         groupId: au.com.dius
+         artifactId: pact-jvm-provider-maven_2.11
+         mappings:
+            - versionRange: "*"
+              version: 3.3.4
+              
+              
+        #
+        #  Template Engines
+        #
+        
+        
+      - name: Freemarker
+        id: freemarker
+        category: Template Engines
+        groupId: org.mybatis.spring.boot
+        artifactId:  spring-boot-starter-freemarker
+        description: FreeMarker templating engine
+      
+      - name: Velocity
+        id: velocity
+        category: Template Engines
+        groupId: org.mybatis.spring.boot
+        artifactId: spring-boot-starter-velocity
+        description: Velocity templating engine
+        versionRange: "[1.1.6.RELEASE,1.4.0.M2)"
+      
+      - name: Groovy Templates
+        id: groovy-templates
+        category: Template Engines
+        groupId: org.mybatis.spring.boot
+        artifactId: spring-boot-starter-groovy-templates
+        description: Groovy templating engine
+      
+      - name: Thymeleaf
+        id: thymeleaf
+        category: Template Engines
+        groupId: org.mybatis.spring.boot
+        artifactId: spring-boot-starter-thymeleaf         
+        description: Thymeleaf templating engine, including integration with Spring
+      
+      - name: Mustache
+        id: mustache
+        category: Template Engines
+        groupId: org.mybatis.spring.boot
+        artifactId: spring-boot-starter-mustache
+        description: Mustache templating engine
+        versionRange: 1.2.2.RELEASE
+        
+        #               SQL
+        # *********************************************************
+        
+      - name: JPA
+        id: data-jpa
+        category: SQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-jpa
+        description: Java Persistence API including spring-data-jpa, spring-orm and Hibernate
+          
+      - name: JOOQ
+        id: jooq
+        category: SQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jooq
+        description: Persistence support using Java Object Oriented Querying
+        versionRange: 1.3.0.M2
+          
+      - name: MyBatis
+        id: mybatis
+        category: SQL
+        description: Persistence support using MyBatis
+        groupId: org.mybatis.spring.boot
+        artifactId: mybatis-spring-boot-starter
+        mappings:
+           - versionRange: "[1.3.0.RELEASE,1.4.0.M2)"
+             version: 1.1.1
+           - versionRange: 1.4.0.M2
+             version: 1.2.0
+              
+      - name: JDBC
+        id: jdbc
+        category: SQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-jdbc
+        description: JDBC databases
+          
+      - name: H2
+        id: h2
+        category: SQL
+        description: H2 database (with embedded support)
+        groupId: com.h2database
+        artifactId: h2
+        scope: runtime
+          
+          
+      - name: HSQLDB
+        id: hsql
+        category: SQL
+        description: HSQLDB database (with embedded support)
+        groupId: org.hsqldb
+        artifactId: hsqldb
+        scope: runtime
+          
+      - name: Apache Derby
+        id: derby
+        category: SQL
+        description: Apache Derby database (with embedded support)
+        groupId: org.apache.derby
+        artifactId: derby
+        scope: runtime
+        versionRange: 1.2.2.RELEASE
+          
+      - name: MySQL
+        id: mysql
+        category: SQL
+        description: MySQL jdbc driver
+        groupId: mysql
+        artifactId: mysql-connector-java
+        scope: runtime
+          
+      - name: PostgreSQL
+        id: postgresql
+        category: SQL
+        description: PostgreSQL jdbc driver
+        groupId: org.postgresql
+        artifactId: postgresql
+        mappings:
+           - versionRange: "[1.2.0.RELEASE,1.3.0.M1)"
+             version: 9.4-1201-jdbc41
+        scope: runtime
+          
+      - name: SQL Server
+        id: sqlserver
+        category: SQL
+        description: Microsoft SQL Server jdbc driver
+        versionRange: 1.5.0.RC1
+        groupId: com.microsoft.sqlserver
+        artifactId: mssql-jdbc
+        scope: runtime
+          
+      - name: Flyway
+        id: flyway
+        category: SQL
+        description: Flyway Database Migrations library
+        groupId: org.flywaydb
+        artifactId: flyway-core
+          
+      - name: Liquibase
+        id: liquibase
+        category: SQL
+        description: Liquibase Database Migrations library
+        groupId: org.liquibase
+        artifactId: liquibase-core
+        
+
+     #            No SQL                    #
+     # *************************************#
+     
+      - name: MongoDB
+        id: data-mongodb
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId:
+        description: MongoDB NoSQL Database, including spring-data-mongodb
+          
+      - name: Reactive MongoDB
+        id: data-mongodb-reactive
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId:
+        description: MongoDB NoSQL Database, including spring-data-mongodb and the reactive driver
+          
+      - name: Embedded MongoDB
+        id: flapdoodle-mongo
+        category: NoSQL
+        description: Embedded MongoDB for testing
+        versionRange: 1.3.0.RELEASE
+        groupId: de.flapdoodle.embed
+        artifactId: de.flapdoodle.embed.mongo
+        scope: test
+          
+          
+      - name: Cassandra
+        id: data-cassandra
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-cassandra
+        description: Cassandra NoSQL Database, including spring-data-cassandra
+        versionRange: 1.3.0.RC1
+          
+      - name: Couchbase
+        id: data-couchbase
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-couchbase
+        description: Couchbase NoSQL database, including spring-data-couchbase
+        versionRange: 1.4.0.M1
+          
+      - name: Neo4j
+        id: data-neo4j
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-neo4j
+        description: Neo4j NoSQL graph database, including spring-data-neo4j
+        versionRange: 1.4.0.M2
+          
+      - name: Redis 1.1.5.RELEASE +
+        id: data-redis
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-redis
+        description: REDIS key-value data store, including spring-redis
+        versionRange: 1.4.0.M1
+           
+      - name: Redis  1.4.0.M1
+        id: data-redis
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-redis
+        description: REDIS key-value data store, including spring-redis     
+        versionRange: "[1.1.5.RELEASE,1.4.0.M1)"     
+              
+      - name: Gemfire
+        id: data-gemfire
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-gemfire
+        description: GemFire distributed data store including spring-data-gemfire
+        versionRange: "[1.1.0.RELEASE,2.0.0.M1)"
+          
+      - name: Solr
+        id: data-solr
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-solr
+        description: Apache Solr search platform, including spring-data-solr
+          
+      - name: Elasticsearch
+        id: data-elasticsearch
+        category: NoSQL
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-data-elasticsearch
+        description: Elasticsearch search and analytics engine including spring-data-elasticsearch
+        
+       
