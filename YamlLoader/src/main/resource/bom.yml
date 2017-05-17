@@ -581,4 +581,495 @@ deps:
         artifactId: spring-boot-starter-data-elasticsearch
         description: Elasticsearch search and analytics engine including spring-data-elasticsearch
         
+       #       Cloud Core
+       # ******************************************************
        
+      - name: Cloud Connectors
+        id: cloud-connectors
+        category: Cloud Core
+        description: Simplifies connecting to services in cloud platforms, including spring-cloud-connector and spring-cloud-cloudfoundry-connector
+        bom: [cloud-bom]
+        versionRange: 1.2.0.RELEASE
+          
+      - name: Cloud Bootstrap
+        id: cloud-starter
+        category: Cloud Core
+        description: spring-cloud-context (e.g. Bootstrap context and @RefreshScope)
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Cloud Security
+        id: cloud-security
+        category: Cloud Core
+        description: Secure load balancing and routing with spring-cloud-security
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-security
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Cloud OAuth2
+        id: cloud-oauth2
+        category: Cloud Core
+        description: OAuth2 and distributed application patterns with spring-cloud-security
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-oauth2
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+      
+      - name: Cloud Task    # Duplicate Task1
+        id: cloud-task1 
+        category: Cloud Core
+        description: Task result tracking along with integration with batch and streams
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-task
+        versionRange: "1.4.0.RELEASE"
+        bom: [cloud-task-bom,cloud-bom]
+            
+      - name: Cloud Task     # Duplicate Task2
+        id: cloud-task2
+        category: Cloud Core
+        description: Task result tracking along with integration with batch and streams
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-task-starter
+        versionRange: "[1.3.0.RELEASE,1.3.x.RELEASE]"
+        bom: [cloud-task-bom,cloud-bom]
+
+    # **********************************************************
+    #                Cloud Config                               |
+    # **********************************************************
+    
+      - name: Config Client
+        id: cloud-config-client
+        category: Cloud Config
+        description: spring-cloud-config Client
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-config
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Config Server
+        id: cloud-config-server
+        category: Cloud Config
+        description: Central management for configuration via a git or svn backend
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-config-server
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Zookeeper Configuration
+        id: cloud-starter-zookeeper-config
+        category: Cloud Config
+        description: Configuration management with Zookeeper and spring-cloud-zookeeper-config
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-zookeeper-config
+          
+      - name: Consul Configuration
+        id: cloud-starter-consul-config
+        category: Cloud Config
+        description: Configuration management with Hashicorp Consul
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-consul-config 
+        
+       
+       # **************************************************
+       #              Cloud Discovery                     #
+       # **************************************************
+       
+      - name: Eureka Discovery
+        id: cloud-eureka
+        category: Cloud Config
+        description: Service discovery using spring-cloud-netflix and Eureka
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-eureka
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Eureka Server
+        id: cloud-eureka-server
+        category: Cloud Config
+        description: spring-cloud-netflix Eureka Server
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-eureka-server
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Zookeeper Discovery
+        id: cloud-starter-zookeeper-discovery
+        category: Cloud Config
+        description: Service discovery with Zookeeper and spring-cloud-zookeeper-discovery
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-zookeeper-discovery
+        bom: [cloud-bom]
+          
+      - name: Cloud Foundry Discovery
+        id: cloud-cloudfoundry-discovery
+        category: Cloud Config
+        description: Service discovery with Cloud Foundry
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-cloudfoundry-discovery
+        bom: [cloud-bom]
+          
+      - name: Consul Discovery
+        id: cloud-starter-consul-discovery
+        category: Cloud Config
+        description: Service discovery with Hashicorp Consul
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-consul-discovery
+        bom: [cloud-bom]
+        
+        
+        # *****************************************************
+        #                Cloud Routing                        #
+        # *****************************************************
+        
+      - name: Zuul
+        id: cloud-zuul
+        category: Cloud Routing
+        description: Intelligent and programmable routing with spring-cloud-netflix Zuul
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-zuul
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Ribbon
+        id: cloud-ribbon
+        category: Cloud Routing
+        description: Client side load balancing with spring-cloud-netflix and Ribbon
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-ribbon
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Feign
+        id: cloud-feign
+        category: Cloud Routing
+        description: Declarative REST clients with spring-cloud-netflix Feign
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-feign
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+        
+        
+        #*****************************************************************
+        #               Cloud Circuit Breaker                            #
+        # ****************************************************************
+        
+      - name: Hystrix
+        id: cloud-hystrix
+        category: Cloud Circuit Breaker
+        description: Circuit breaker with spring-cloud-netflix Hystrix
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-hystrix
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Hystrix Dashboard
+        id: cloud-hystrix-dashboard
+        category: Cloud Circuit Breaker
+        description: Circuit breaker dashboard with spring-cloud-netflix Hystrix
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-hystrix-dashboard
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Turbine
+        id: cloud-turbine
+        category: Cloud Circuit Breaker
+        description: Circuit breaker metric aggregation using spring-cloud-netflix with Turbine and server-sent events
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-turbine
+        bom: [cloud-bom]
+        versionRange: 1.2.3.RELEASE
+          
+      - name: Turbine Stream
+        id: cloud-turbine-stream
+        category: Cloud Circuit Breaker
+        description: Circuit breaker metric aggregation using spring-cloud-netflix with Turbine and Spring Cloud Stream (choose a specific Stream binder implementation to complement this)
+        versionRange: 1.3.0.M5
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-turbine-stream
+        bom: [cloud-bom]
+        
+        
+        # ***********************************************************
+        #             Cloud Tracing                                 #
+        # ***********************************************************
+        
+      - name: Sleuth
+        id: cloud-starter-sleuth
+        category: Cloud Tracing
+        description: Distributed tracing via logs with spring-cloud-sleuth
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-sleuth
+        bom: [cloud-bom]
+        versionRange: 1.3.0.M4
+          
+      - name: Zipkin Client
+        id: cloud-starter-zipkin
+        category: Cloud Tracing
+        description: Distributed tracing with an existing Zipkin installation and spring-cloud-sleuth-zipkin. Alternatively, consider Sleuth Stream.
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-zipkin
+        bom: [cloud-bom]    
+        versionRange: 1.3.0.M4          
+          
+      - name: Sleuth Stream
+        id: cloud-sleuth-stream
+        category: Cloud Tracing
+        description: Marshals Spring Cloud Sleuth Spans over a Spring Cloud Stream binder
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-sleuth-stream
+        versionRange: 1.3.0.M4
+        bom: [cloud-bom]         
+
+      - name: Zipkin Stream
+        id: cloud-sleuth-zipkin-stream
+        category: Cloud Tracing
+        description:  Consumes span data in messages from Spring Cloud Sleuth Stream and writes them to a Zipkin store
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-sleuth-zipkin-stream
+        versionRange: 1.3.0.M4
+        bom: [cloud-bom]
+          
+      - name: Zipkin UI
+        id: zipkin-ui
+        category: Cloud Tracing
+        description: add the Zipkin UI module to the Zipkin server to get a Zipkin service that accepts Spans and provides visualization
+        groupId: io.zipkin.java
+        artifactId: zipkin-autoconfigure-ui
+        scope: runtime
+        versionRange: 1.3.3.RELEASE
+        bom: [cloud-bom]
+        
+        
+        ##**************************************************##
+        ##               Cloud Messaging                    ##
+        ##**************************************************##
+        
+      - name: Cloud Bus AMQP
+        id: cloud-bus-amqp
+        category: Cloud Messaging
+        description: A simple control bus with AMQP and spring-cloud-bus-amqp
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-bus-amqp
+        versionRange: 1.2.3.RELEASE
+        bom: [cloud-bom]
+          
+      - name: Cloud Bus Kafka
+        id: cloud-bus-kafka
+        category: Cloud Messaging
+        description: A simple control bus with Kafka and spring-cloud-bus
+        versionRange: "1.3.0.RELEASE"
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-bus-kafka
+        bom: [cloud-bom]
+          
+      - name: Stream Rabbit
+        id: cloud-stream-binder-rabbit
+        category: Cloud Messaging
+        description: Messaging microservices with RabbitMQ
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-stream-rabbit
+        bom: [cloud-bom]
+          
+      - name: Stream Kafka
+        id: cloud-stream-binder-kafka
+        category: Cloud Messaging
+        description: Messaging microservices with Kafka
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-stream-binder-kafka
+        bom: [cloud-bom]
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##              Cloud AWS                         ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        
+      - name: AWS Core
+        id: cloud-aws
+        category: Cloud AWS
+        description: AWS native services from spring-cloud-aws
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-aws
+        versionRange: 1.2.3.RELEASE
+        bom: [cloud-bom]
+          
+          
+      - name: AWS JDBC
+        id: cloud-aws-jdbc
+        category: Cloud AWS
+        description: Relational databases on AWS with RDS and spring-cloud-aws-jdbc
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-aws-jdbc
+        versionRange: 1.2.3.RELEASE
+        bom: [cloud-bom]
+          
+      - name: AWS Messaging
+        id: cloud-aws-messaging
+        category: Cloud AWS
+        description: Messaging on AWS with SQS and spring-cloud-aws-messaging
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-aws-messaging
+        versionRange: 1.2.3.RELEASE
+        bom: [cloud-bom]
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##              Cloud Data Flow                   ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##       
+        
+      - name: Local Data Flow Server
+        id: cloud-dataflow-server-local
+        category: Cloud Data Flow
+        description: Local Data Flow Server implementation
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-dataflow-server-local
+        versionRange: "[1.3.2.RELEASE, 2.0.0.M1)"
+        bom: [cloud-dataflow-bom]
+           
+      - name: Data Flow Shell
+        id: cloud-dataflow-shell
+        category: Cloud Data Flow
+        description: Data Flow Shell
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-dataflow-shell
+        versionRange: "[1.3.2.RELEASE, 2.0.0.M1)"
+        bom: [cloud-dataflow-bom]
+        
+        
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##              Cloud Cluster                     ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##        
+        
+      - name: Cluster Redis
+        id: cloud-cluster-redis
+        category: Cloud Cluster
+        description: Leadership election and global state with Redis and spring-cloud-cluster-redis
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-cluster-redis
+        bom: [cloud-bom]
+        versionRange: 1.3.0.M4
+          
+      - name: Cluster Zookeeper
+        id: cloud-cluster-zookeeper
+        category: Cloud Cluster
+        description: Leadership election and global state with Zookeeper and spring-cloud-cluster-zookeeper
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-cluster-zookeeper
+        bom: [cloud-bom]
+        versionRange: 1.3.0.M4
+          
+      - name: Cluster Hazelcast
+        id: cloud-cluster-hazelcast
+        category: Cloud Cluster
+        description: Leadership election and global state with Hazelcast and spring-cloud-cluster-hazelcast
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-cluster-hazelcast
+        bom: [cloud-bom]
+        versionRange: 1.3.0.M4
+          
+      - name: Cluster Etcd
+        id: cloud-cluster-etcd
+        category: Cloud Cluster
+        description: Leadership election and global state with Etcd and spring-cloud-cluster-etcd
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-cluster-etcd
+        bom: [cloud-bom]
+        versionRange: 1.3.0.M4
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##              Cloud Contract                    ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        
+      - name: Cloud Contract Verifier
+        id: cloud-contract-verifier
+        category: Cloud Contract
+        description: Test dependencies required for autogenerated tests
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-contract-verifier
+        scope: test
+        versionRange: 1.4.0.RC1
+        bom: [cloud-bom]
+          
+      - name: Cloud Contract Stub Runner
+        id: cloud-contract-stub-runner
+        category: Cloud Contract
+        description: Stub Runner for HTTP/Messaging based communication
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-starter-contract-stub-runner
+        scope: test
+        versionRange: 1.4.0.RC1
+        bom: [cloud-bom]
+          
+      - name: Cloud Contract WireMock
+        id: cloud-contract-wiremock
+        category: Cloud Contract
+        description: Test dependencies required for the WireMock HTTP server
+        groupId: org.springframework.cloud
+        artifactId: spring-cloud-contract-wiremock
+        scope: test
+        versionRange: 1.4.0.RC1
+        bom: [cloud-bom]
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##              Pivotal Cloud Foundry             ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##   
+        
+      - name: Config Client (PCF)
+        id: scs-config-client
+        category: Cloud Contract
+        description: Config client on Pivotal Cloud Foundry
+        groupId: io.pivotal.spring.cloud
+        artifactId: spring-cloud-services-starter-config-client
+        bom: [cloud-services-bom]
+        versionRange: "[1.3.0.RELEASE,2.0.0.M1)"
+          
+      - name: Service Registry (PCF)
+        id: scs-service-registry
+        category: Cloud Contract
+        description: Eureka service discovery on Pivotal Cloud Foundry
+        groupId: io.pivotal.spring.cloud
+        artifactId: spring-cloud-services-starter-service-registry
+        bom: [cloud-services-bom]
+        versionRange: "[1.3.0.RELEASE,2.0.0.M1)"
+          
+      - name: Circuit Breaker (PCF)
+        id: scs-circuit-breaker
+        category: Cloud Contract
+        description: Hystrix circuit breaker on Pivotal Cloud Foundry
+        groupId: io.pivotal.spring.cloud
+        artifactId: spring-cloud-services-starter-circuit-breaker
+        bom: [cloud-services-bom]
+        versionRange: "[1.3.0.RELEASE,2.0.0.M1)"     
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##                   Social                       ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##  
+        
+                - name: Facebook
+          id: social-facebook
+          category: Social
+          description: spring-social-facebook
+          artifactId: spring-boot-starter-social-facebook
+          groupId: org.springframework.boot
+          
+        - name: LinkedIn
+          id: social-linkedin
+          category: Social
+          description: spring-social-linkedin
+          artifactId: spring-boot-starter-social-linkedin
+          groupId: org.springframework.boot
+          
+        - name: Twitter
+          id: social-twitter
+          category: Social
+          description: spring-social-twitter
+          artifactId: spring-boot-starter-social-twitter
+          groupId: org.springframework.boot
+        
