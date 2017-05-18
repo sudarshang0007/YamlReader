@@ -1,5 +1,6 @@
 boms: 
       - name: cloud-bom
+        id: cloud-bom
         groupId: org.springframework.cloud
         artifactId: spring-cloud-dependencies
         mappings:
@@ -15,7 +16,9 @@ boms:
           - versionRange: "1.5.x.BUILD-SNAPSHOT"
             version: Dalston.BUILD-SNAPSHOT
             repositories: spring-snapshots,spring-milestones
+            
       - name: cloud-dataflow-bom
+        id: cloud-dataflow-bom 
         groupId: org.springframework.cloud
         artifactId: spring-cloud-dataflow-dependencies
         bom: [cloud-task-bom,cloud-bom]
@@ -30,7 +33,9 @@ boms:
           - versionRange: "[1.5.0.RC1, 2.0.0.M1)"
             version: 1.2.0.BUILD-SNAPSHOT
             repositories: spring-snapshots,spring-milestones
+            
       - name: cloud-services-bom
+        id: cloud-services-bom
         groupId: io.pivotal.spring.cloud
         artifactId: spring-cloud-services-dependencies
         bom: [cloud-bom]
@@ -42,7 +47,9 @@ boms:
           - versionRange: "[1.5.x.BUILD-SNAPSHOT, 2.0.0.M1)"
             version: 1.4.2.BUILD-SNAPSHOT
             repositories: spring-snapshots,spring-milestones
+            
       - name: cloud-task-bom
+        id:  cloud-task-bom
         groupId: org.springframework.cloud
         artifactId: spring-cloud-task-dependencies
         mappings:
@@ -53,7 +60,9 @@ boms:
           - versionRange: "1.5.0.RC1"
             version: 1.2.0.M2
             repositories: spring-milestones
+            
       - name: vaadin-bom
+        id: vaadin-bom
         groupId: com.vaadin
         artifactId: vaadin-bom
         mappings:
@@ -61,7 +70,9 @@ boms:
             version: 7.7.5
           - versionRange: "1.5.0.M1"
             version: 8.0.5
+            
       - name: stormpath-bom
+        id: stormpath-bom 
         groupId: com.stormpath.sdk
         artifactId: stormpath-bom
         mappings:
@@ -1052,24 +1063,163 @@ deps:
         ##                   Social                       ##
         ##++++++++++++++++++++++++++++++++++++++++++++++++##  
         
-                - name: Facebook
-          id: social-facebook
-          category: Social
-          description: spring-social-facebook
-          artifactId: spring-boot-starter-social-facebook
-          groupId: org.springframework.boot
+      - name: Facebook
+        id: social-facebook
+        category: Social
+        description: spring-social-facebook
+        artifactId: spring-boot-starter-social-facebook
+        groupId: org.springframework.boot
           
-        - name: LinkedIn
-          id: social-linkedin
-          category: Social
-          description: spring-social-linkedin
-          artifactId: spring-boot-starter-social-linkedin
-          groupId: org.springframework.boot
+      - name: LinkedIn
+        id: social-linkedin
+        category: Social
+        description: spring-social-linkedin
+        artifactId: spring-boot-starter-social-linkedin
+        groupId: org.springframework.boot
           
-        - name: Twitter
-          id: social-twitter
-          category: Social
-          description: spring-social-twitter
-          artifactId: spring-boot-starter-social-twitter
-          groupId: org.springframework.boot
+      - name: Twitter
+        id: social-twitter
+        category: Social
+        description: spring-social-twitter
+        artifactId: spring-boot-starter-social-twitter
+        groupId: org.springframework.boot
+        
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##
+        ##                   I/O                          ##
+        ##++++++++++++++++++++++++++++++++++++++++++++++++##       
+        
+        
+      - name: Batch
+        id: batch
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-batch
+        description: Spring Batch including HSQLDB database
+          
+      - name: Integration
+        id: integration
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-integration
+        description: Common spring-integration modules
+          
+      - name: Activiti
+        id: activiti-basic
+        category: I/O
+        description: Activiti BPMN workflow engine
+        groupId: org.activiti
+        artifactId: activiti-spring-boot-starter-basic
+        mappings:
+           - versionRange: "*"
+             version: 5.21.0
+          
+      - name: Apache Camel
+        id: camel
+        category: I/O
+        description: Integration using Apache Camel
+        groupId: org.apache.camel
+        artifactId: camel-spring-boot-starter
+        mappings:
+           - versionRange: "*"
+             version: 2.18.3
+          
+      - name: JMS (ActiveMQ)
+        id: activemq
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-activemq
+        description: Java Message Service API via Apache ActiveMQ
+        versionRange: 1.4.0.RC1
+          
+      - name: JMS (Artemis)
+        id: artemis
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-artemis
+        description: Java Message Service API via Apache Artemis
+        versionRange: 1.3.0.M2
+          
+      - name: JMS (HornetQ)
+        id: hornetq
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-hornetq
+        description: Java Message Service API via HornetQ
+        versionRange: "[1.1.0.RELEASE,1.4.0.RC1)"
+          
+      - name: AMQP
+        id: amqp
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-amqp
+        description: Advanced Message Queuing Protocol via spring-rabbit
+          
+      - name: Kafka
+        id: kafka
+        category: I/O
+        description: Kafka messaging support using Spring Kafka
+        versionRange: 1.5.0.RC1
+        groupId: org.springframework.kafka
+        artifactId: spring-kafka
+          
+      - name: Mail
+        id: mail
+        category: I/O
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-mail
+        description: javax.mail
+        versionRange: 1.2.0.RC1
+          
+      - name: LDAP
+        id: data-ldap
+        category: I/O
+        groupId: org.springframework.boot 
+        artifactId: spring-boot-starter-data-ldap
+        description: LDAP support, including spring-data-ldap
+        versionRange: 1.5.0.RC1
+        
+        
+      - name: Actuator
+        id: actuator
+        category: Ops
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-actuator
+        description: Production ready features to help you monitor and manage your application
+      
+      - name: Actuator Docs
+        id: actuator-docs
+        category: Ops
+        description: API documentation for the Actuator endpoints
+        versionRange: 1.3.0.M4
+        groupId: org.springframework.boot
+        artifactId: spring-boot-actuator-docs
+      
+      - name: Remote Shell
+        id: remote-shell
+        category: Ops
+        groupId: org.springframework.boot
+        artifactId: spring-boot-starter-remote-shell
+        description: CRaSH shell integration
+        versionRange: "[1.0.0.RELEASE,1.5.0.RC1)"
+      
+      - name: Asciidoctor
+        id: asciidoctor
+        category: Ops
+        description: Library for running Asciidoctor on the JVM 
+        groupId: org.asciidoctor
+        artifactId: asciidoctorj
+        mappings:
+           - versionRange: "*"
+             version: 1.5.4
+             
+      - name: Swagger
+        id: swagger
+        category: Ops
+        description: To generate the swagger documentation 
+        groupId: io.swagger
+        artifactId: swagger-project
+        mappings:
+           - versionRange: "*"
+             version: 1.5.13
+        
         
