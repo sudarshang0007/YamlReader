@@ -17,23 +17,20 @@ public class YMLLoader {
 		Logger logger = Logger.getLogger(YMLLoader.class);
 		DependencyWrapper dw = null;
 
-		// Read Yml into DTO
 		ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 		InputStream stream = YMLLoader.class.getResourceAsStream("/bom.yml");
 
 		try {
 			dw = mapper.readValue(stream, DependencyWrapper.class);
-
 		} catch (IOException e) {
 			logger.error(e);
 		}
 
 		// DTO To domain OBject
 		if (dw != null) {
-			
+
 			JavaYmlUtil ymlUtil = new JavaYmlUtil();
-			JavaDependencyResolver resolver =  (JavaDependencyResolver) ymlUtil.getJavaDependencies(dw);
-		
+			JavaDependencyResolver resolver = (JavaDependencyResolver) ymlUtil.getJavaDependencies(dw);
 			System.out.println(resolver.getBoms().size());
 			System.out.println(resolver.getDependencies().size());
 		}

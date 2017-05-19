@@ -1,11 +1,11 @@
 package com.siemens.depmanagement.model;
 
-public class Mapping {
+public class VersionMapping {
 	
 	private String version;
 	private SpringVersionRange versionRange;
 	
-	public Mapping() {
+	public VersionMapping() {
 	}
 	
 	public String getVersion() {

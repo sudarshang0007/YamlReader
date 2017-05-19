@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SpecificVersionMapping {
 
-	private List<Mapping> mappings;
+	private List<VersionMapping> mappings;
 
 	public String getDependencyVersion(String bootVersion) {
 		return null;

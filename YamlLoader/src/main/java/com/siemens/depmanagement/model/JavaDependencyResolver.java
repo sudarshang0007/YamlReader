@@ -26,4 +26,9 @@ public class JavaDependencyResolver implements DependencyResolver {
 		this.dependencies = dependencies;
 	}
 
+	@Override
+	public void initialize() {
+		
+	}
+
 }
