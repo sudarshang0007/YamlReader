@@ -70,6 +70,14 @@ public class JavaYmlUtil {
 			}
 
 			// Specific Version Mapping
+			List<YmlMapping> MappingList =  yml.getMappings();
+			
+			if(MappingList !=null || MappingList.isEmpty() != true ){
+				for (YmlMapping mappint : MappingList) {
+					System.out.println(mappint.toString());
+				}
+			}
+
 			// dependencyConfig.setSpecificMapping(null);
 
 			list.add(dependencyConfig);
@@ -82,39 +90,54 @@ public class JavaYmlUtil {
 		SpringVersionRange versionRange = new SpringVersionRange();
 		SpringVersion firstVersion = new SpringVersion();
 		SpringVersion secondVersion = new SpringVersion();
+		List<SpringVersion> versionList = new ArrayList<SpringVersion>();
 
 		String[] versionSet = version.split(",");
 		logger.info("size of splitted array :" + versionSet.length);
 
+ 		
 		if (versionSet.length > 1) {
 
+			versionSet[0] = versionSet[0].replace('x','0').replace("-", "_");
+			versionSet[1] = versionSet[1].replace('x', '9').replace("-", "_");
+			
 			versionRange.setIsInclusiveStart(versionSet[0].contains("[") ? true : false);
 			versionSet[0] = versionSet[0].replace('[', ' ').replace('(', ' ').trim();
 
 			versionRange.setIsInclusiveEnd(versionSet[1].contains("]") ? true : false);
 			versionSet[1] = versionSet[1].replace(']', ' ').replace(')', ' ').trim();
 
-			System.out.println(versionSet[0]);
-
 			String[] startVersion = versionSet[0].split("\\.");
 			firstVersion.setMajorVersion(Integer.parseInt(startVersion[0]));
 			firstVersion.setMinorVersion(Integer.parseInt(startVersion[1]));
 			firstVersion.setPatchVersion(Integer.parseInt(startVersion[2]));
 			firstVersion.setStageId(SpringVersionStage
-					.valueOf(startVersion[3].length() == 2 ? startVersion[3].substring(0, 1) : startVersion[3].length() == 2 ? startVersion[3].substring(0, 2) : startVersion[3]));
+					.valueOf(startVersion[3].length() == 2 ? startVersion[3].substring(0, 1) : startVersion[3].length() == 3 ? startVersion[3].substring(0, 2) : startVersion[3]));
 
 			String[] endVersion = versionSet[1].split("\\.");
 			secondVersion.setMajorVersion(Integer.parseInt(endVersion[0]));
 			secondVersion.setMinorVersion(Integer.parseInt(endVersion[1]));
 			secondVersion.setPatchVersion(Integer.parseInt(endVersion[2]));
 			secondVersion.setStageId(SpringVersionStage
-					.valueOf(endVersion[3].length() == 3 ? endVersion[3].substring(0, 2) : endVersion[3]));
+					.valueOf(endVersion[3].length() == 2 ? endVersion[3].substring(0, 1) : endVersion[3].length() == 3 ? endVersion[3].substring(0, 2) : endVersion[3]));
 
-			versionRange.getVersion().add(firstVersion);
-			versionRange.getVersion().add(secondVersion);
+			versionList.add(firstVersion);
+			versionList.add(secondVersion);
+			versionRange.setVersion(versionList);
 
 		} else {
+			versionRange.setAny(true);
+			versionSet[0] = versionSet[0].replace('x', '0').replace('-', '_');
+			
+			String[] startVersion = versionSet[0].split("\\.");
+			firstVersion.setMajorVersion(Integer.parseInt(startVersion[0]));
+			firstVersion.setMinorVersion(Integer.parseInt(startVersion[1]));
+			firstVersion.setPatchVersion(Integer.parseInt(startVersion[2]));
+			firstVersion.setStageId(SpringVersionStage
+					.valueOf(startVersion[3].length() == 2 ? startVersion[3].substring(0, 1) : startVersion[3].length() == 3 ? startVersion[3].substring(0, 2) : startVersion[3]));
 
+			versionList.add(firstVersion);
+			versionRange.setVersion(versionList);
 		}
 
 		return versionRange;
